@@ -113,16 +113,18 @@ export async function markdownDirectoryToTable (options = {}) {
 			const value = row[key]
 
 			if (columnType.includes('[]')) {
-				return `[${
+				return `'[${
 					value.map((item) => {
-						return `'${item}'`
-					})
-				}]`
+						return `${item}`
+					}).join(',')
+				}]'`
 			}
 
 			if (typeof value === 'string') {
 				return `'${value.replace(/'/g, '\'\'')}'`
 			}
+
+			if (typeof value === 'boolean') {}
 
 			return value
 		})
