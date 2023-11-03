@@ -14,7 +14,7 @@ test('markdownDirectoryToTable', async (t) => {
 		}
 	})
 
-	const rows = await db.prepare('SELECT * FROM markdown;').all()
+	const rows = db.prepare('SELECT * FROM markdown;').all()
 
 	const expected = [
 		{ title: 'B', content: '<p>This is b.</p>\n' },

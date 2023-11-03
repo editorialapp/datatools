@@ -69,6 +69,18 @@ export class MarkdownDirectory extends Directory {
 	}
 }
 
+/**
+ * Create a sqlite table from a directory of markdown files. The markdown can have yaml front matter. 
+ * Make sure the front matter has all the same properties for each file. The markdown content will be in a column named `content`.
+ * @param {Object} options 
+ * @param {String} options.tableName name of table to create
+ * @param {String} options.directoryFilepath directory to read markdown files from
+ * @param {Object} options.columns object of column names and types
+ * @param {Boolean} [options.clearTable] whether to clear the table before inserting
+ * @param {Object} [options.db] sqlite database instance. `options.databaseFilepath` will be ignored if this is provided.
+ * @param {String} [options.databaseFilepath] filepath to sqlite database. ignored if `options.db` is provided.
+ * @returns {Promise<Database>}
+ */
 export async function markdownDirectoryToTable (options = {}) {
 	const dir = new MarkdownDirectory({ directory: options.directoryFilepath })
 	await dir.ready()
