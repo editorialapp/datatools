@@ -101,7 +101,7 @@ export async function markdownDirectoryToTable (options = {}) {
 		const { content } = file
 		const results = matter(content)
 		const { attributes, body } = results
-		const { value } = await markdownToHtml(body)
+		const { value } = await markdownToHtml(body, options)
 		const row = {
 			...attributes,
 			content: value
