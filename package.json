@@ -23,9 +23,9 @@
 		"./xlsx": "./lib/xlsx.js"
 	},
 	"dependencies": {
-		"@aws-sdk/client-s3": "^3.441.0",
+		"@aws-sdk/client-s3": "^3.449.0",
 		"@sindresorhus/slugify": "^2.2.1",
-		"better-sqlite3": "^9.0.0",
+		"better-sqlite3": "^9.1.1",
 		"collect-stream": "^1.2.1",
 		"csv": "^6.3.5",
 		"dedent": "^1.5.1",
