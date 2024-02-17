@@ -5,22 +5,23 @@ A collection of dependencies organized into useful tools for working with data i
 These tools assume they will be used as part of scripts run with Node.js.
 
 ## Turn a directory of markdown into a sqlite3 table
+
 An example taken from the tests:
 
 ```js
-import * as dirname from 'desm'
 import { markdownDirectoryToTable } from '@editorialapp/datatools'
+import * as dirname from 'desm'
 
 const markdownDirectory = dirname.join(import.meta.url, './fixtures/markdown')
 
 // an instance of Database from better-sqlite3 is returned
 const db = await markdownDirectoryToTable({
-    directoryFilepath: markdownDirectory,
-    tableName: 'markdown',
-    columns: {
-        title: 'TEXT',
-        content: 'TEXT'
-    }
+	directoryFilepath: markdownDirectory,
+	tableName: 'markdown',
+	columns: {
+		title: 'TEXT',
+		content: 'TEXT'
+	}
 })
 
 const rows = await db.prepare('SELECT * FROM markdown;').all()
@@ -35,4 +36,5 @@ console.log(rows)
 ```
 
 ## License
+
 [Apache-2.0](LICENSE.md)

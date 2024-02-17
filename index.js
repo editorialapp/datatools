@@ -70,9 +70,9 @@ export class MarkdownDirectory extends Directory {
 }
 
 /**
- * Create a sqlite table from a directory of markdown files. The markdown can have yaml front matter. 
+ * Create a sqlite table from a directory of markdown files. The markdown can have yaml front matter.
  * Make sure the front matter has all the same properties for each file. The markdown content will be in a column named `content`.
- * @param {Object} options 
+ * @param {Object} options
  * @param {String} options.tableName name of table to create
  * @param {String} options.directoryFilepath directory to read markdown files from
  * @param {Object} options.columns object of column names and types
